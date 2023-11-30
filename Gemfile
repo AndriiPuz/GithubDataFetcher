@@ -27,5 +27,8 @@ end
 group :test do
   gem "capybara"
   gem "selenium-webdriver"
+  gem 'rspec-rails'
+  gem 'vcr'
+  gem 'rails-controller-testing'
 end
 gem "graphiql-rails", group: :development
