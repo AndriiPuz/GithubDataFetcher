@@ -104,6 +104,14 @@ GEM
     erubi (1.12.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    graphiql-rails (1.9.0)
+      railties
+      sprockets-rails
+    graphql (2.1.6)
+      racc (~> 1.4)
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.2.3)
@@ -130,6 +138,7 @@ GEM
     mini_mime (1.1.5)
     minitest (5.20.0)
     msgpack (1.7.2)
+    multi_xml (0.6.0)
     mutex_m (0.2.0)
     net-imap (0.4.7)
       date
@@ -242,6 +251,9 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  graphiql-rails
+  graphql
+  httparty
   importmap-rails
   jbuilder
   pg (~> 1.1)

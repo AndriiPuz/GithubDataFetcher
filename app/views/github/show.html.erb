@@ -1,0 +1,25 @@
+<h1>GitHub User Search</h1>
+
+<%= form_tag(github_search_path, method: 'get') do %>
+  <%= label_tag :github_login, 'GitHub Username:' %>
+  <%= text_field_tag :github_login, params[:github_login], required: true %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
+<% if @user %>
+  <h2>User Information</h2>
+  <p><strong>Name:</strong> <%= @user.name %></p>
+<% end %>
+
+<% if @repos.present? %>
+  <h2>Repositories</h2>
+  <ul>
+    <% @repos.each do |repo| %>
+      <li><strong><%= repo.name %></strong>: <%= repo.description %></li>
+    <% end %>
+  </ul>
+<% elsif @repos.nil? %>
+  <p>Failed to fetch repositories</p>
+<% else %>
+  <p>No repositories found</p>
+<% end %>
