@@ -127,6 +127,7 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jslint_on_rails (1.1.1)
     json (2.6.3)
     language_server-protocol (3.17.0.3)
     loofah (2.22.0)
@@ -302,6 +303,7 @@ DEPENDENCIES
   httparty
   importmap-rails
   jbuilder
+  jslint_on_rails
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.2)
