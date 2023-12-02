@@ -1,7 +1,7 @@
 inherit_from: .rubocop_todo.yml
 
 require:
-  # - rubocop-rspec
+  - rubocop-rspec
   - rubocop-rails
 
 AllCops:
@@ -9,4 +9,13 @@ AllCops:
   TargetRubyVersion: 3.2.2
 
 Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/ExampleLength:
   Enabled: false
