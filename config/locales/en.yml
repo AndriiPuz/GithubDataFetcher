@@ -28,4 +28,5 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  github:
+    please_enter_username: 'Please enter a GitHub username'

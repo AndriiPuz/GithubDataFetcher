@@ -1,6 +1,9 @@
+require 'json'
+require 'net/http'
+
 class GithubService
-  GITHUB_API_URL = 'https://api.github.com/graphql'.freeze
-  GITHUB_ACCESS_TOKEN = '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'.freeze
+  GITHUB_API_URL = ENV['GITHUB_API_URL'].freeze
+  GITHUB_ACCESS_TOKEN = ENV['GITHUB_ACCESS_TOKEN'].freeze
 
   def self.get_user(login)
     query = <<~GRAPHQL
@@ -55,18 +58,18 @@ class GithubService
   end
 
   def self.handle_response(response, repos: false)
-    return nil unless response.present?
+    return nil if response.blank?
 
     begin
       parsed_response = JSON.parse(response)
       if repos
         repo_data = parsed_response['data']['user']['repositories']['nodes']
-        Rails.logger.debug("Repositories Data: #{repo_data}")
-        repo_data.map { |repo_data| create_repo_openstruct(repo_data) }
+        Rails.logger.debug { "Repositories Data: #{repo_data}" }
+        repo_data.map { |data| create_repo_struct(data) }
       else
         user_data = parsed_response['data']['user']
-        Rails.logger.debug("User Data: #{user_data}")
-        create_user_openstruct(user_data)
+        Rails.logger.debug { "User Data: #{user_data}" }
+        create_user_struct(user_data)
       end
     rescue StandardError => e
       Rails.logger.error("Failed to handle GitHub API response: #{e.message}")
@@ -74,16 +77,11 @@ class GithubService
     end
   end
 
-  def self.create_user_openstruct(user_data)
-    OpenStruct.new(
-      name: user_data['name']
-    )
+  def self.create_user_struct(user_data)
+    Struct.new(:name).new(user_data['name'])
   end
 
-  def self.create_repo_openstruct(repo_data)
-    OpenStruct.new(
-      name: repo_data['name'],
-      description: repo_data['description']
-    )
+  def self.create_repo_struct(repo_data)
+    Struct.new(:name, :description).new(repo_data['name'], repo_data['description'])
   end
 end

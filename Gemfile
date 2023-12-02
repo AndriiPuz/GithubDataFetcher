@@ -14,16 +14,17 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
-gem 'httparty'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
-  gem 'rubocop', require: false
-  gem 'jslint_on_rails'
+  gem 'dotenv-rails', require: 'dotenv/rails-now'
 end
 
 group :development do
   gem "web-console"
+  gem 'rubocop', "~> 1.58.0", require: false
+  gem 'jslint_on_rails'
+  gem 'rubocop-rails', "~> 2.22.2", require: false
 end
 
 group :test do

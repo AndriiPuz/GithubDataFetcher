@@ -1,0 +1,23 @@
+Inspecting 57 files
+..........................W..............................
+
+Offenses:
+
+app/services/github_service.rb:57:3: C: Metrics/AbcSize: Assignment Branch Condition size for handle_response is too high. [<5, 18, 5> 19.34/17]
+  def self.handle_response(response, repos: false) ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/services/github_service.rb:65:26: W: Lint/ShadowingOuterLocalVariable: Shadowing outer local variable - repo_data.
+        repo_data.map { |repo_data| create_repo_openstruct(repo_data) }
+                         ^^^^^^^^^
+
+57 files inspected, 2 offenses detected
+
+Tip: Based on detected gems, the following RuboCop extension libraries might be helpful:
+  * rubocop-capybara (https://rubygems.org/gems/rubocop-capybara)
+  * rubocop-graphql (https://rubygems.org/gems/rubocop-graphql)
+  * rubocop-rails (https://rubygems.org/gems/rubocop-rails)
+  * rubocop-rspec (https://rubygems.org/gems/rubocop-rspec)
+
+You can opt out of this message by adding the following to your config (see https://docs.rubocop.org/rubocop/extensions.html#extension-suggestions for more options):
+  AllCops:
+    SuggestExtensions: false
