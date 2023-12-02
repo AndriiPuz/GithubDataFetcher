@@ -6,6 +6,6 @@ class GithubController < ApplicationController
     else
       flash.now[:alert] = I18n.t('github.please_enter_username')
     end
-    render 'show'
+    render 'search'
   end
 end
