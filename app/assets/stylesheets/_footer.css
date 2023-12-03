@@ -1,0 +1,43 @@
+.footer-basic {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer{
+  background: rgb(138, 137, 137);
+  padding:10px 0px;
+  font-family: 'Play', sans-serif;
+  text-align:center;
+
+}
+
+.icon-row > a {
+  display: inline-block;
+  width: unset !important;
+}
+
+.icon-row {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5px;
+}
+.footer a{
+  text-decoration:none;
+  color:white;
+  transition:0.5s;
+  margin: 10px;
+}
+.footer a i{
+  font-size:2em;
+  margin:0% 1%;
+}
+
+.Copyright {
+  text-align: center;
+  color: gray;
+}
+
+.footer a:hover{
+  color:black;
+}
