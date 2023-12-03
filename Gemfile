@@ -25,8 +25,8 @@ end
 group :development do
   gem "web-console"
   gem 'rubocop', "~> 1.58.0", require: false
-  gem 'jslint_on_rails'
   gem 'rubocop-rails', "~> 2.22.2", require: false
+  gem "graphiql-rails"
 end
 
 group :test do
@@ -36,4 +36,3 @@ group :test do
   gem 'vcr'
   gem 'rails-controller-testing'
 end
-gem "graphiql-rails", group: :development

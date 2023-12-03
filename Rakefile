@@ -3,10 +3,8 @@
 
 require_relative "config/application"
 require 'rubocop/rake_task'
-require 'jslint/tasks'
 
 RuboCop::RakeTask.new(:rubocop)
 task default: [:rubocop]
 
 Rails.application.load_tasks
-JSLint.config_path = "config/lint.yml"
