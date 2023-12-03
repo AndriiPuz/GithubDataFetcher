@@ -30,3 +30,5 @@
 en:
   github:
     please_enter_username: 'Please enter a GitHub username'
+  placeholders:
+    github_login: "Enter GitHub login"

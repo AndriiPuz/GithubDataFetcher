@@ -1,8 +1,7 @@
 <h1>GitHub User Search</h1>
 
 <%= form_tag(github_search_path, method: 'get') do %>
-  <%= label_tag :github_login, 'GitHub Username:' %>
-  <%= text_field_tag :github_login, params[:github_login], required: true %>
+  <%= text_field_tag :github_login, params[:github_login], placeholder: t('placeholders.github_login'), required: true %>
   <%= submit_tag 'Search' %>
 <% end %>
 
@@ -18,9 +17,9 @@
       <li><strong><%= repo.name %></strong>: <%= repo.description %></li>
     <% end %>
   </ul>
-<% elsif @repos.nil? %>
-  <p>Failed to fetch repositories</p>
-<% else %>
+
+  <%= paginate @repos %>
+
+<% elsif params[:github_login].present? %>
   <p>No repositories found</p>
 <% end %>
-<h2> <%= @repos.count %></h2>
