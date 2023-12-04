@@ -37,7 +37,7 @@ group :test do
   gem 'rails-controller-testing'
 end
 
-gem "dockerfile-rails", ">= 1.5", :group => :development
+gem "dockerfile-rails", ">= 1.5", group: :development
 
 gem "sentry-ruby", "~> 5.14"
 
