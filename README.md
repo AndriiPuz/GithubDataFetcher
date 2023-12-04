@@ -1,24 +1,18 @@
-# README
+# Test task for CyberCraft
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
+In this application, I have implemented a form where you can enter the login of a GitHub user and get the GitHub name and the names of the user's repositories.
+Data from the GitHub is extracted and processed using GraphQL.
+I also wrote tests for the project using Rspec and vcr.
+Added a code checker (Rubocop).
+GitHub Flow was used for the project.
+And the application is deployed on Fly.io service
 
-Things you may want to cover:
+### You can access this page via https://githubdatafetcher.fly.dev/
 
-* Ruby version
+### This is how Search page looks like
+<img width="1440" alt="mainpage" src="https://github.com/AndriiPuz/GithubDataFetcher/assets/112422662/ce900537-fcfc-4708-a05a-86ce0caddea4">
 
-* System dependencies
+### This is how Search page with result looks like
+<img width="1440" alt="mainpage_with_result" src="https://github.com/AndriiPuz/GithubDataFetcher/assets/112422662/407d1e1e-b24c-4998-826f-9379e29f65ec">
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
