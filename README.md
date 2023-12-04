@@ -4,7 +4,7 @@
 In this application, I have implemented a form where you can enter the login of a GitHub user and get the GitHub name and the names of the user's repositories.
 Data from the GitHub is extracted and processed using GraphQL.
 I also wrote tests for the project using Rspec and vcr.
-Added a code checker (Rubocop).
+Added a code linter (Rubocop).
 GitHub Flow was used for the project.
 And the application is deployed on Fly.io service
 
