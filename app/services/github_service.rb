@@ -2,10 +2,8 @@ require 'json'
 require 'net/http'
 
 class GithubService
-  # GITHUB_API_URL = ENV['GITHUB_API_URL'].freeze
-  # GITHUB_ACCESS_TOKEN = ENV['GITHUB_ACCESS_TOKEN'].freeze
-  GITHUB_API_URL = 'https://api.github.com/graphql'.freeze
-  GITHUB_ACCESS_TOKEN = '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'.freeze
+  GITHUB_API_URL = ENV['GITHUB_API_URL'].freeze
+  GITHUB_ACCESS_TOKEN = ENV['GITHUB_ACCESS_TOKEN'].freeze
 
   def self.get_user(login)
     query = <<~GRAPHQL
